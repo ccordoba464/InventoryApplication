@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+
+  ul
+    each release in release_list
+      li
+        a(href=release.url) #{release.title}
+        |  (#{release.author.name})
+
+    else
+      li There are no releases.

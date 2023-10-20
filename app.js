@@ -10,10 +10,6 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
-// view engine setup
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "pug");
-
 mongoose.set("strictQuery", false);
 const mongoDB =
   "mongodb+srv://ccordoba464:dbpassword@cluster0.8vwxbqp.mongodb.net/?retryWrites=true&w=majority";
@@ -22,6 +18,10 @@ main().catch(err => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
 }
+
+// view engine setup
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
 
 app.use(logger("dev"));
 app.use(express.json());
