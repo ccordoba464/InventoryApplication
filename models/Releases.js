@@ -18,4 +18,4 @@ ReleasesSchema.virtual("url").get(function () {
 });
 
 // Export model
-module.exports = mongoose.model("Releases", ReleasesSchema);
+module.exports = mongoose.model("releases", ReleasesSchema);

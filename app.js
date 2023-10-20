@@ -16,7 +16,9 @@ const mongoDB =
 
 main().catch(err => console.log(err));
 async function main() {
-  await mongoose.connect(mongoDB);
+  await mongoose.connect(mongoDB, {
+    dbName: "Music_Library",
+  });
 }
 
 // view engine setup

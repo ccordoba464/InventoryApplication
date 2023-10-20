@@ -22,7 +22,9 @@ main().catch(err => console.log(err));
 
 async function main() {
   console.log("Debug: About to connect");
-  await mongoose.connect(mongoDB);
+  await mongoose.connect(mongoDB, {
+    dbName: "Music_Library",
+  });
   console.log("Debug: Should be connected?");
   await createGenres();
   await createReleases();
