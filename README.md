@@ -3,6 +3,7 @@
 ## Releases/Items
 
 - Name
+- Artist
 - Description
 - Genre (Category)
 - Price
@@ -13,7 +14,4 @@
 
 - Name
 - Description
-- Genre
-- Price
-- Number-in-stock
 - URL
