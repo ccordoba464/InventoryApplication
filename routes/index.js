@@ -34,7 +34,7 @@ router.post("/genre/:id/update", genre_controller.genre_update_post);
 router.get("/genre/:id", genre_controller.genre_detail);
 
 // GET request for list of all Genre.
-router.get("/genres", genre_controller.genre_list);
+router.get("/genre", genre_controller.genre_list);
 
 /// RELEASE ROUTES ///
 
@@ -60,6 +60,6 @@ router.post("/release/:id/update", release_controller.release_update_post);
 router.get("/release/:id", release_controller.release_detail);
 
 // GET request for list of all Release.
-router.get("/releases", release_controller.release_list);
+router.get("/release", release_controller.release_list);
 
 module.exports = router;

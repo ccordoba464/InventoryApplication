@@ -14,7 +14,7 @@ const ReleasesSchema = new Schema({
 // Virtual for author's URL
 ReleasesSchema.virtual("url").get(function () {
   // We don't use an arrow function as we'll need the this object
-  return `/releases/${this._id}`;
+  return `/release/${this._id}`;
 });
 
 // Export model

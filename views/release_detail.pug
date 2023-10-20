@@ -1,38 +1,17 @@
 extends layout
 
 block content
-  h1 Title: #{release.title}
+  h1 #{release.name}
 
-  p #[strong Author:]
-    a(href=release.author.url) #{release.author.name}
-  p #[strong Summary:] #{release.summary}
-  p #[strong ISBN:] #{release.isbn}
-  p #[strong Genre:]
-    each val, index in release.genre
-      a(href=val.url) #{val.name}
-      if index < release.genre.length - 1
-        |,
+  p #[strong Artist:] #{release.artist}
+  p #[strong Description:] #{release.description}
+  p #[strong Price:] #{release.price}
+  p #[strong Number In Stock:] #{release.number_in_stock}
+
+  p #[strong Genre:] #[a(href=release.genre.url) #{release.genre.name}]
 
   div(style='margin-left:20px;margin-top:20px')
     h4 Copies
-
-    each val in release_instances
-      hr
-      if val.status=='Available'
-        p.text-success #{val.status}
-      else if val.status=='Maintenance'
-        p.text-danger #{val.status}
-      else
-        p.text-warning #{val.status}
-      p #[strong Imprint:] #{val.imprint}
-      if val.status!='Available'
-        p #[strong Due back:] #{val.due_back}
-      p #[strong Id:]
-        a(href=val.url) #{val._id}
-
-    else
-      p There are no copies of this release in the library.
-
     hr
     p
       a(href=release.url+'/delete') Delete release

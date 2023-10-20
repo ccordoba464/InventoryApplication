@@ -17,13 +17,11 @@ exports.release_list = asyncHandler(async (req, res, next) => {
 
 // Display detail page for a specific release.
 exports.release_detail = asyncHandler(async (req, res, next) => {
-  // Get details of releases
-  const [release] = await Promise.all([
-    Release.findById(req.params.id).populate("genre").exec(),
-  ]);
+  const release = await Release.findById(req.params.id)
+    .populate("genre")
+    .exec();
 
   if (release === null) {
-    // No results.
     const err = new Error("Release not found");
     err.status = 404;
     return next(err);
