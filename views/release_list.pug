@@ -6,7 +6,7 @@ block content
   ul
     each release in release_list
       li
-        a(href=release.url) #{release.title}
+        a(href=release.url) #{release.name}
         |  (#{release.genre.name})
 
     else

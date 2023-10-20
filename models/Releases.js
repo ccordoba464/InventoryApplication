@@ -6,7 +6,7 @@ const ReleasesSchema = new Schema({
   name: { type: String },
   artist: { type: String },
   description: { type: String },
-  genre: { type: String },
+  genre: { type: Schema.Types.ObjectId, ref: "genres" },
   price: { type: Number },
   number_in_stock: { type: Number },
 });
