@@ -1,8 +1,6 @@
 # Music Inventory Application
 
----
-
-# Releases/Items
+## Releases/Items
 
 \*Name
 \*Description
@@ -11,7 +9,7 @@
 \*Number-in-stock
 \*URL
 
-# Categories/Genres
+## Categories/Genres
 
 \*Name
 \*Description
