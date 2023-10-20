@@ -7,7 +7,7 @@ block content
     each release in release_list
       li
         a(href=release.url) #{release.name}
-        |  (#{release.genre.name})
+        |  (#{release.artist})
 
     else
       li There are no releases.

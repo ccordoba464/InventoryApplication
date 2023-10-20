@@ -3,16 +3,17 @@ extends layout
 block content
 
   h1 Genre: #{genre.name}
+  p #{genre.description}
 
   div(style='margin-left:20px;margin-top:20px')
 
-    h4 Books
+    h4 Releases
 
     dl
-      each book in genre_books
+      each release in genre_releases
         dt
-            a(href=book.url) #{book.title}
-        dd #{book.summary}
+            a(href=release.url) #{release.name}
+        dd #{release.description}
 
       else
-        p This genre has no books
+        p This genre has no releases
