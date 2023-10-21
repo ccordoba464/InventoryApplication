@@ -4,11 +4,15 @@ block content
   h1 #{release.name}
 
   p #[strong Artist:] #{release.artist}
-  p #[strong Description:] #{release.description}
+  p #[strong Description:] !{release.description}
   p #[strong Price:] #{release.price}
   p #[strong Number In Stock:] #{release.number_in_stock}
 
-  p #[strong Genre:] #[a(href=release.genre.url) #{release.genre.name}]
+  p #[strong Genre:]
+    each val, index in release.genre
+      a(href=val.url) #{val.name}
+      if index < release.genre.length - 1
+        |,
 
   div(style='margin-left:20px;margin-top:20px')
     h4 Copies

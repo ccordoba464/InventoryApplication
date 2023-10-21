@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 #{title}: #{release.name}
+  p= release.artist
+    p Do you really want to delete this Release?
+
+    form(method='POST' action='')
+      div.form-group
+        input#releaseid.form-control(type='hidden',name='releaseid', required='true', value=release._id )
+
+      button.btn.btn-primary(type='submit') Delete
