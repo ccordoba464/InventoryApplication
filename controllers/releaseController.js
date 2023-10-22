@@ -130,7 +130,7 @@ exports.release_delete_get = asyncHandler(async (req, res, next) => {
   const release = await Release.findById(req.params.id).exec();
 
   if (release === null) {
-    res.redirect("/author");
+    res.redirect("/release");
   }
 
   res.render("release_delete", {
